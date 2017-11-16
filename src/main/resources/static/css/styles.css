@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Anton|Barlow|Barlow+Condensed|Barlow+Semi+Condensed|Cairo|Fjalla+One|Gloria+Hallelujah|Indie+Flower|Oswald');
+
+
+a {
+	color: white;
+	text-decoration: none;
+	text-shadow: 1px 1px gray;
+}
+
+a:hover {
+	color: gold;
+}
+
+a:visited {
+	color: white;
+}
+
+body {
+	background-attachment: fixed;
+	background-color: black;
+	background-size: cover;
+	color: white;
+	font-family: 'Barlow Condensed', sans-serif;
+	/* font-family: 'Barlow Semi Condensed', sans-serif; */
+	/* font-family: 'Barlow', sans-serif; */
+	/* font-family: 'Oswald', sans-serif; */
+	/* font-family: 'Anton', sans-serif; */
+	/* font-family: 'Fjalla One', sans-serif; */
+	/* font-family: 'Indie Flower', cursive; */
+	/* font-family: 'Abel', sans-serif; */
+	/* font-family: 'Gloria Hallelujah', cursive; */
+	/* font-family: 'Cairo', sans-serif; */
+}
+
+h1 {
+	font-size: 48px;
+	text-shadow: 2px 2px black;
+}
+
+h2 {
+	font-size: 56px;
+}
+
+header {
+	background-color: transparent;
+	background-image: url("../images/theater5headerfade.png");
+	padding-top: 1rem;
+	text-align: center;
+}
+
+ul li {
+	list-style-type: none;
+}
+
+.movie-title {
+	font-size: 24px;
+}
+
+.nav-item {
+	background-color: gold;
+	border-style: outset;
+	border-color: gold;
+	border-width: 6px;
+	font-size: 22px;
+	padding: 3px;
+	text-shadow: 1px 1px gray;
+}
+
+.rating-content {
+	font-size: 90px;
+}
+
+.rating-icons {
+	text-shadow: 4px 4px gray;
+}

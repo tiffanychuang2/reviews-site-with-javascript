@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Movie Review</title>
+	<link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/layout.css"/>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>Movie Review</h1>
+			<nav>
+				<ul class="nav-bar">
+					<li><a th:class="nav-item" id="link" href="http://localhost:8080/reviews">Home</a></li>
+					<li><a th:class="nav-item" id="link" href="http://localhost:8080/genres">Genres</a></li>
+					<li><a th:class="nav-item" id="link" href="http://localhost:8080/ratings">Ratings</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<h2 class="page-title" th:text="${review.movieTitle.toUpperCase()} + ', ' + ${review.releaseYear}"></h2>
+		<h3 class="review-rating" th:text="'Rated ' + ${review.rating}"></h3>
+		<p class="review-genre" th:text="${review.movieGenre}"></p>
+
+		<section class="review-content">
+			<img class="movie-photo" alt="${review.movieTitle} + ' Image'" th:src="${review.imageUrl}"/>		
+			<blockquote class="movie-review" th:text="${review.myMovieReview}"></blockquote>
+		</section>
+	</div> <!-- container -->
+</body>
+</html>
