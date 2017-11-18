@@ -29,20 +29,20 @@ public class MovieReview {
 	private MovieRating rating;
 
 	@ManyToMany
-	private Set<Genre> movieGenre;
+	private Set<Genre> movieGenres;
 
 	// constructors
 	protected MovieReview() {
 	}
 
 	public MovieReview(String imageUrl, String movieTitle, String releaseYear, String myMovieReview, MovieRating rating,
-			Genre... movieGenre) {
+			Genre... movieGenres) {
 		this.imageUrl = imageUrl;
 		this.movieTitle = movieTitle;
 		this.releaseYear = releaseYear;
 		this.myMovieReview = myMovieReview;
 		this.rating = rating;
-		this.movieGenre = new HashSet(Arrays.asList(movieGenre));
+		this.movieGenres = new HashSet<Genre>(Arrays.asList(movieGenres));
 	}
 
 	// getters
@@ -70,8 +70,16 @@ public class MovieReview {
 		return rating;
 	}
 
-	public Set<Genre> getMovieGenre() {
-		return movieGenre;
+	public Set<Genre> getMovieGenres() {
+		return movieGenres;
+	}
+
+	public void addGenre(Genre genre) {
+		movieGenres.add(genre);
+	}
+
+	public void removeGenre(Genre genre) {
+		movieGenres.remove(genre);
 	}
 
 	// setters
@@ -99,13 +107,13 @@ public class MovieReview {
 		this.rating = rating;
 	}
 
-	public void setMovieGenre(Set<Genre> movieGenre) {
-		this.movieGenre = movieGenre;
+	public void setMovieGenres(Set<Genre> movieGenres) {
+		this.movieGenres = movieGenres;
 	}
 
 	@Override
 	public String toString() {
-		return imageUrl + " " + movieTitle + " " + releaseYear + " " + myMovieReview + " " + rating + " " + movieGenre;
+		return imageUrl + " " + movieTitle + " " + releaseYear + " " + myMovieReview + " " + rating + " " + movieGenres;
 	}
 
 }

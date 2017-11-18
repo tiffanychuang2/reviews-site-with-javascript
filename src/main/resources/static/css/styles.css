@@ -11,10 +11,6 @@ a:hover {
 	color: gold;
 }
 
-a:visited {
-	color: white;
-}
-
 body {
 	background-attachment: fixed;
 	background-color: black;
@@ -72,4 +68,12 @@ ul li {
 
 .rating-icons {
 	text-shadow: 4px 4px gray;
+}
+
+.review-genre {
+	font-size: 24px;
+}
+
+.review-rating {
+	font-size: 32px;
 }

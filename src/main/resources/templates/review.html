@@ -21,13 +21,49 @@
 		</header>
 
 		<h2 class="page-title" th:text="${review.movieTitle.toUpperCase()} + ', ' + ${review.releaseYear}"></h2>
-		<h3 class="review-rating" th:text="'Rated ' + ${review.rating}"></h3>
-		<p class="review-genre" th:text="${review.movieGenre}"></p>
+		
+		<section class="categories">
+			<a class="review-rating" th:href="@{/rating(id=${review.rating.id})}" th:text="'Rated ' + ${review.rating}"></a>
+			<p class="review-rating divider" th:text="'|'"/>
+			<div class="review-genre">
+				<ul>
+					<li th:each="genre: ${review.movieGenres}">
+						<a th:href="@{/genre(id=${genre.id})}" th:text="${genre.genre}"></a>
+						<!-- <form>
+						<input name="id" type="hidden" th:value="${review.id}"/>
+						<a th:href="@{/remove-genre(genreId=${genre.id})}">
+						<button th:formaction = "@{/remove-genre}" th:text="x"></button></a>
+						</form> -->
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="add-genre">
+		<form method="POST">
+			<input name="id" type="hidden" th:value="${reviewId}"/>
+			<label>Enter a genre to add:<input type="text" name="genre" /></label>
+			<input type="hidden" name="genreImage" />
+						<!-- <label>Enter an image for that genre:<input type="url" name="genreImage" /></label> -->
+			<button th:formaction="@{/add-genre}">Add</button>
+		</form>
+		</section>
+		
+		
 
 		<section class="review-content">
 			<img class="movie-photo" alt="${review.movieTitle} + ' Image'" th:src="${review.imageUrl}"/>		
 			<blockquote class="movie-review" th:text="${review.myMovieReview}"></blockquote>
 		</section>
+
+		
+		<!-- <form method="POST">
+			<label>Enter the genre you would like to remove:</label>
+			<input type="text" name="id" />
+			<button th:formaction="@{/remove-course}">delete</button>
+		</form> -->
+
 	</div> <!-- container -->
+	<script src="./js/app.js"></script>
 </body>
 </html>

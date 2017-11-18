@@ -16,12 +16,18 @@ public class Genre {
 
 	private String genreImage;
 	private String genre;
+	private String defaultImage = "./images/default-review.png";
 
-	@ManyToMany(mappedBy = "movieGenre")
+	@ManyToMany(mappedBy = "movieGenres")
 	private Set<MovieReview> genresForMovies;
 
 	// constructors
 	protected Genre() {
+	}
+
+	public Genre(String genre) {
+		this.genre = genre;
+		this.genreImage = defaultImage;
 	}
 
 	public Genre(String genreImage, String genre) {
@@ -42,12 +48,12 @@ public class Genre {
 		return genre;
 	}
 
-	// public MovieReview getReview() {
-	// return review;
-	// }
-
 	public Set<MovieReview> getGenresForMovies() {
 		return genresForMovies;
+	}
+
+	public String getDefaultImage() {
+		return defaultImage;
 	}
 
 	// setters

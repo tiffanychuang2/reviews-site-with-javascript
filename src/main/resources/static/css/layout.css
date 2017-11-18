@@ -21,6 +21,17 @@ header {
 	width: 100%;
 }
 
+.add-genre {
+	display: flex;
+	justify-content: center;
+}
+
+.categories {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
 .content {
 	display: grid;
 	grid-gap: 20px;
@@ -38,6 +49,11 @@ header {
 	height: 432px;
 	/*margin: 4rem;*/
 	width: 288px;
+}
+
+.divider {
+	padding-left: 3rem;
+	padding-right: 2rem;
 }
 
 .genrePhotos {
@@ -129,4 +145,21 @@ header {
 	display: flex;
 	justify-content: center;
 	padding-bottom: 10rem;
+}
+
+.review-genre ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-top: .75rem;
+}
+	.review-genre ul li {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	}
+
+.review-rating {
+	display: flex;
+	justify-content: center;
+	padding-top: .75rem;
 }
