@@ -17,7 +17,16 @@
  		this.style.fontSize = '22px';
  	});
  }
- 
+
+ let copyright = document.querySelectorAll('#copyright');
+ for(let i=0; i<copyright.length; i++) {
+ 	copyright[i].addEventListener('mouseover', function() {
+ 		this.innerText = 'Created By Tiffany Chuang';
+ 	});
+ 	copyright[i].addEventListener('mouseout', function() {
+ 		this.innerText = '© 2017';
+ 	});
+ } 
  
 // comment section
  let submitComment = document.querySelector('.submit-comment');
