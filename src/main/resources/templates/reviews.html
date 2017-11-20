@@ -10,6 +10,8 @@
 
 <body>
 	<div class="container">
+
+<!-- fixed header		 -->
 		<header>
 			<h1>Movie Reviews</h1>
 			<nav>
@@ -21,6 +23,7 @@
 			</nav>
 		</header>
 
+<!-- content -->
 		<section class="content">
 			<div th:each="review: ${reviews}">
 				<ul class="movies">
@@ -32,8 +35,6 @@
 					</ul>
 				</div>
 			</section>
-
-	
 
 		</div> <!-- container -->
 		<script src="./js/app.js"></script>

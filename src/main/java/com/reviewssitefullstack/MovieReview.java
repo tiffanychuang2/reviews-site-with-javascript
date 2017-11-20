@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class MovieReview {
@@ -22,8 +23,16 @@ public class MovieReview {
 	private String movieTitle;
 	private String releaseYear;
 
+	private String name;
+
+	@Lob
+	private String comment;
+
 	@Lob
 	private String myMovieReview;
+
+	@OneToMany(mappedBy = "review")
+	Set<CommentSection> comments;
 
 	@ManyToOne
 	private MovieRating rating;
@@ -33,6 +42,22 @@ public class MovieReview {
 
 	// constructors
 	protected MovieReview() {
+	}
+
+	public MovieReview(String movieTitle, String releaseYear, String myMovieReview, MovieRating rating) {
+		this.movieTitle = movieTitle;
+		this.releaseYear = releaseYear;
+		this.myMovieReview = myMovieReview;
+		this.rating = rating;
+	}
+
+	public MovieReview(String movieTitle, String releaseYear, String myMovieReview, MovieRating rating,
+			String imageUrl) {
+		this.movieTitle = movieTitle;
+		this.releaseYear = releaseYear;
+		this.myMovieReview = myMovieReview;
+		this.rating = rating;
+		this.imageUrl = imageUrl;
 	}
 
 	public MovieReview(String imageUrl, String movieTitle, String releaseYear, String myMovieReview, MovieRating rating,
@@ -82,6 +107,14 @@ public class MovieReview {
 		movieGenres.remove(genre);
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
 	// setters
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
@@ -109,6 +142,14 @@ public class MovieReview {
 
 	public void setMovieGenres(Set<Genre> movieGenres) {
 		this.movieGenres = movieGenres;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 
 	@Override

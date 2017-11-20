@@ -1,5 +1,7 @@
 package com.reviewssitefullstack;
 
+import java.util.Set;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -61,30 +63,50 @@ public class ReviewsSiteController {
 		return "rating";
 	}
 
-	@RequestMapping("/add-genre")
-	public String addGenre(@RequestParam(value = "id") Long id, String genre, String genreImage) {
-		Genre newGenre;
-		if (!genreImage.equals("")) {
-			newGenre = new Genre(genre, genreImage);
-		} else {
-			newGenre = new Genre(genre);
-		}
-		genreRepo.save(newGenre);
-		MovieReview review = reviewRepo.findOne(id);
-		review.addGenre(newGenre);
-		reviewRepo.save(review);
-		return "redirect:/review?id=" + id;
-	}
+	// @RequestMapping("/add-genre")
+	// public String addGenre(@RequestParam Long id, String genreName, String
+	// genreImage) {
+	// Genre newGenre = genreRepo.findByName(genreName);
+	// if (newGenre == null) {
+	// newGenre = new Genre(genreName, genreImage);
+	// genreRepo.save(newGenre);
+	// }
+	// // if (!genreImage.equals("")) {
+	// // newGenre = new Genre(genre, genreImage);
+	// // } else {
+	// // newGenre = new Genre(genre);
+	// // }
+	// // genreRepo.save(newGenre);
+	// MovieReview review = reviewRepo.findOne(id);
+	// Set<Genre> existingGenres = review.getMovieGenres();
+	// if (!existingGenres.contains(newGenre)) {
+	// review.addGenre(newGenre);
+	// reviewRepo.save(review);
+	// }
+	// return "redirect:/genres";
+	// }
 
 	// @RequestMapping("/remove-genre")
-	// public String removeGenre(@RequestParam(value = "genreId") Long genreId,
-	// @RequestParam(value = "reviewId") Long reviewId) {
-	// Genre removedGenre = genreRepo.findOne(genreId);
+	// public String removeGenre(@RequestParam Long genreId, @RequestParam Long
+	// reviewId) {
+	// Genre deleteGenre = genreRepo.findOne(genreId);
 	// MovieReview review = reviewRepo.findOne(reviewId);
-	// review.removeGenre(removedGenre);
+	// review.removeGenre(deleteGenre);
+	// reviewRepo.save(review);
 	// return "redirect:/review?id=" + reviewId;
 	// }
 
 	@RequestMapping("/remove-genre")
-	
+	public String removeGenre(@RequestParam Long genreId, @RequestParam Long reviewId) {
+		Genre deleteGenre = genreRepo.findOne(genreId);
+		MovieReview review = reviewRepo.findOne(reviewId);
+
+		Set<Genre> existingGenres = review.getMovieGenres();
+
+		if (existingGenres.contains(deleteGenre)) {
+			review.removeGenre(deleteGenre);
+			reviewRepo.save(review);
+		}
+		return "redirect:/review?id=" + reviewId;
+	}
 }

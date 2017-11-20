@@ -141,11 +141,34 @@ header {
 	justify-content: center;
 }
 
+
+
+.body-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.comment-inputs {
+	display: flex;
+	flex-direction: column;
+	grid-column: 4 / -1;
+	justify-content: flex-end;
+}
+
+.comment-button {
+	display: flex;
+	justify-content: space-around;
+}
+
 .review-content {
 	display: flex;
-	justify-content: center;
+	/*justify-content: center;*/
+	flex-direction: column;
+	grid-column: 2 / -1;
 	padding-bottom: 10rem;
 }
+
+
 
 .review-genre ul {
 	display: flex;
