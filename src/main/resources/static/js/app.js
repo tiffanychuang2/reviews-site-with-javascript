@@ -85,6 +85,8 @@ deleteGenre[i].addEventListener('click', function(event) {
 });
 }
 
+
+
  
 
 

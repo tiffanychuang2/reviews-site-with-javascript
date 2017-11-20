@@ -36,15 +36,14 @@
 					<button id="delete-genre" name="genreId" th:value="${genre.id}" th:formaction="@{/remove-genre}">X</button>
 					</li>
 				</ul>
-			</form>
-				
+			</form>				
 			</div>
 		</section>
 
 		<section class="add-genre">
 		<form method="POST">
 			<input name="id" type="hidden" th:value="${review.id}"/>
-			<label>Enter a genre to add: <input type="text" name="genreName" /></label>
+			<label>Add a genre: <input type="text" name="genreName" /></label>
 			<input type="hidden" name="genreImage" />
 						<!-- <label>Enter an image URL for that genre:<input type="url" name="genreImage" /></label> -->
 			<!-- <button th:formaction="@{/add-genre}">Add</button> -->

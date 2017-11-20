@@ -24,7 +24,8 @@ header {
 .add-genre {
 	display: flex;
 	justify-content: center;
-}
+	padding-top: 1rem;
+ }
 
 .categories {
 	display: flex;
@@ -32,12 +33,17 @@ header {
 	justify-content: center;
 }
 
+.comments-section {
+	padding-left: 1rem;
+	padding-top: 2rem;
+}
+
 .content {
 	display: grid;
 	grid-gap: 20px;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	margin: 2rem;
-	padding-bottom: 8rem;
+	padding-bottom: 11rem;
 }
 
 .container {

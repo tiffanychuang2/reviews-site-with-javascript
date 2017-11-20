@@ -29,7 +29,8 @@
 					<li>
 						<!-- <a id="link" th:href="@{/reviews(id=${rating.ratingForMovie})}"> -->
 						<a id="link" th:href="@{/review(id=${currentMovie.id})}">
-							<img class="rating-review" th:src="${currentMovie.imageUrl}"/></a>
+							<img class="rating-review" th:src="${currentMovie.imageUrl}"/>
+							<figcaption class="movie-title" th:text="${currentMovie.movieTitle}"></figcaption></a>
 						</li>
 					</ul>
 				</div>
