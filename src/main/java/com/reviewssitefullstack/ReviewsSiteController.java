@@ -72,7 +72,6 @@ public class ReviewsSiteController {
 		if (newGenre == null) {
 			// newGenre = new Genre(genreName, genre, genreImage);
 			newGenre = new Genre(genreName);
-			// newGenre = new Genre(genreName);
 			genreRepo.save(newGenre);
 		}
 		MovieReview review = reviewRepo.findOne(id);

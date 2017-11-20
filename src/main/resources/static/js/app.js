@@ -7,80 +7,88 @@
  		this.style.fontSize = '22px';
  	});
  }
+ 
+ let captions = document.querySelectorAll('figcaption');
+ for(let i=0; i<captions.length; i++) {
+ 	captions[i].addEventListener('mouseover', function() {
+ 		this.style.fontSize = '120%';
+ 	});
+ 	captions[i].addEventListener('mouseout', function() {
+ 		this.style.fontSize = '22px';
+ 	});
+ }
+ 
+ 
+// comment section
+ let submitComment = document.querySelector('.submit-comment');
+ submitComment.addEventListener('click', function() {
+ 		let userInput = prompt('Share your thoughts:');
+ 		let commentCounter = 0;
+ 		commentCounter = commentCounter + 1;
+ 		
+ 		if(userInput == null || userInput == "") {
+ 		} else {
+ 			
+ 			let text = document.createElement("p");
+ 			text.className = 'commentCounter' + commentCounter;
 
-let copyright = document.querySelectorAll('#copyright');
- copyright.addEventListener('click', function() {
-	document.querySelector('#copyright').innerText = 'Something else';
-});
+ 			let box = document.createTextNode(userInput);
+ 			text.appendChild(box);
 
-//var addCommentButton = document.querySelector('.comment-button');
-//for (var i = addCommentButton.length - 1; i >= 0; i--) {
-//	addCommentButton[i].addEventListener('click', function() {
-//		let addComment = prompt('Share your thoughts:');
-//	});
-//}
+ 			let deleteButton = document.createElement("button");
+ 			deleteButton.className = 'commentCounter' + commentCounter;
+ 			deleteButton.id = commentCounter;
 
+ 			deleteButton.addEventListener('click', function() {
+ 				let confirmDelete = prompt('Delete this comment?  Enter Y to confirm.');
+ 				if(confirmDelete == "Y" || confirmDelete =="y") {
+ 					this.parentNode.remove();
+ 				} else {
+ 					alert("Comment will not be deleted.");
+ 				}
+ 			});
 
+ 			let box2 = document.createTextNode("x");
+ 			deleteButton.appendChild(box2);
 
+ 			let div = document.createElement("div");
+ 			let nameClass = 'commentCounter' + commentCounter;
+ 			div.classList.add(nameClass, "aComment");
+ 			div.id = 'commentCounter' + commentCounter;
 
-// var commentCounter = 0;
-// var comment = document.getElementById('.comment-button');
+ 			let commentSection = document.getElementById("comments");
+ 			commentSection.appendChild(div);
+ 			div.appendChild(deleteButton);
+ 			div.appendChild(text);
+ 		}
+ });
 
-// //*********************************************************************//
-// //Since we start w/o comments, remove the border around the comment div
-// //*********************************************************************//
-// // function displayBoxAroundComments() {
-// //   	if (commentsExist == null) {
-// // 		document.querySelector(".user-comments").style.border = "none";
-// // 	} else {
-// // 		document.querySelector(".user-comments").style.border = "1px dotted grey";
-// // 	}
-// // }
+//  //delete genre confirm
 
-// comment.addEventListener('click', function() {
+// let deleteGenre = document.getElementById('delete-genre');
 
-// 	commentCounter = commentCounter + 1;
-
-// 	var enterComment = prompt('Share your thoughts:');
-
-// 	if (enterComment == null || enterComment == "") {
-// 	} else {
-
-// 		var commentText = document.createElement("p");
-// 		commentText.className = 'commentCounter' + commentCounter;
-
-// 		var displayComment = document.createTextNode(enterComment);
-// 		commentText.appendChild(displayComment);
-
-// 		var deleteButton = document.createElement("button");
-// 		deleteButton.className = 'commentNbr' + commentCounter;
-// 		deleteButton.id = commentCounter;
-
-// 		deleteButton.addEventListener('click', function() {
-// 			var confirmDelete = prompt('Enter YES to confirm delete');
-// 			if (confirmDelete == "YES" || confirmDelete == "yes" || confirmDelete == "Yes") {
-// 				var idNumber = this.id;
-// 				var idNumberToDelete = 'commentDiv' + idName;
-// 				var commentToDelete = document.getElementById(idNumberToDelete);
-// 				commentToDelete.parentNode.removeChild(commentToDelete);
-// 				// displayBoxAroundComments();
+// deleteGenre.addEventListener('click', function() {
+// 			let confirmDelete = prompt('Delete this genre?  Enter Y to confirm.');
+// 			if(confirmDelete == "Y" || confirmDelete =="y") {
+// 				this.parentNode.remove();
 // 			} else {
 // 				alert("Comment will not be deleted.");
 // 			}
-// 		});
-
-// 		var deleteButtonText = document.createTextNode("delete");
-// 		deleteButton.appendChild(deleteButtonText);
-
-// 		var div = document.createElement("div");
-// 		var specificClass = 'commentCounter' + commentCounter;
-// 		div.classList.add(specificClass, "aComment");
-// 		div.id = 'commentDiv' + commentCounter;
-
-// 		var element = document.getElementById("comments");
-// 		element.appendChild(div);
-// 		div.appendChild(deleteButton);
-// 		div.appendChild(commentText);
-// 	}
-// 	// displayBoxAroundComments();
 // });
+
+let deleteGenre = document.querySelectorAll('#delete-genre');
+for (let i = 0; i < deleteGenre.length; i++) {
+deleteGenre[i].addEventListener('click', function(event) {
+    if (!confirm('Remove this genre?')) {
+        event.preventDefault();
+    }
+});
+}
+
+ 
+
+
+ 
+ 
+
+

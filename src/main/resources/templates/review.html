@@ -33,7 +33,7 @@
 				<ul>
 					<li th:each="genre: ${review.movieGenres}">
             			<a th:href="@{/genre(id=${genre.id})}" th:text="${genre.genre}"></a>
-					<button name="genreId" th:value="${genre.id}" th:formaction="@{/remove-genre}">X</button>
+					<button id="delete-genre" name="genreId" th:value="${genre.id}" th:formaction="@{/remove-genre}">X</button>
 					</li>
 				</ul>
 			</form>
@@ -44,10 +44,11 @@
 		<section class="add-genre">
 		<form method="POST">
 			<input name="id" type="hidden" th:value="${review.id}"/>
-			<label>Enter a genre to add: <input type="text" name="genre" /></label>
+			<label>Enter a genre to add: <input type="text" name="genreName" /></label>
 			<input type="hidden" name="genreImage" />
 						<!-- <label>Enter an image URL for that genre:<input type="url" name="genreImage" /></label> -->
-			<button th:formaction="@{/add-genre}">Add</button>
+			<!-- <button th:formaction="@{/add-genre}">Add</button> -->
+			<button th:formaction="@{/add-genre(id=${review.id})}">Add</button>
 		</form>
 		</section>
 		
@@ -56,26 +57,17 @@
 			<section class="review-content">
 				<blockquote class="movie-review" th:text="${review.myMovieReview}"></blockquote>
 			
-				<!-- <form class="comment-inputs" method="POST">
-						<input name="id" type="hidden" th:value="${review.id}" />
-						<label class="comment-input">Name: <input type="text" name="name" /></label>
-						<br></br>
-						<label class="comment-input">Comment: <input type="text" name="comment" /></label>
-					<button class="comment-button" th:formaction="@{/review}">Add</button> -->
-				<!-- </form>	 -->	
-				
-				<!-- <input id="inputName" type="text"/>			
-				<input id="inputComment" type="text"/>
-				<button>Comment</button>
-	            <output id="outputComment"></output> -->
-
-	            <!-- <p class="comments-title">No one asked, but I'd like to share my opinion:</p> -->
-	           	<div id="comments">
+				<section class="comments-section" id="comments">
 	           	 	<p class="comments-title">Comments:</p>
-	           	 	<button class="comment-button">Add Comment</button>
-	        	</div>
-			</section>
-		</div>
+	           		
+	           		<div id="comment-content">
+	           		</div> <!-- comment-content -->
+
+	           	 	<button class="submit-comment">Add Comment</button>
+	        	</section> <!-- comments section -->
+
+			</section> <!-- review-content -->
+		</div> <!-- body-content -->
 
 
 	</div> <!-- container -->
