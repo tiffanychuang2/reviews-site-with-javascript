@@ -63,28 +63,27 @@ public class ReviewsSiteController {
 		return "rating";
 	}
 
-	// @RequestMapping("/add-genre")
-	// public String addGenre(@RequestParam Long id, String genreName, String
-	// genreImage) {
-	// Genre newGenre = genreRepo.findByName(genreName);
-	// if (newGenre == null) {
-	// newGenre = new Genre(genreName, genreImage);
-	// genreRepo.save(newGenre);
-	// }
-	// // if (!genreImage.equals("")) {
-	// // newGenre = new Genre(genre, genreImage);
-	// // } else {
-	// // newGenre = new Genre(genre);
-	// // }
-	// // genreRepo.save(newGenre);
-	// MovieReview review = reviewRepo.findOne(id);
-	// Set<Genre> existingGenres = review.getMovieGenres();
-	// if (!existingGenres.contains(newGenre)) {
-	// review.addGenre(newGenre);
-	// reviewRepo.save(review);
-	// }
-	// return "redirect:/genres";
-	// }
+	@RequestMapping("/add-genre")
+	public String addGenre(@RequestParam Long id, String genreName, String genreImage) {
+		Genre newGenre = genreRepo.findByGenre(genreName);
+		if (newGenre == null) {
+			newGenre = new Genre(genreName, genreImage);
+			genreRepo.save(newGenre);
+		}
+		// if (!genreImage.equals("")) {
+		// newGenre = new Genre(genre, genreImage);
+		// } else {
+		// newGenre = new Genre(genre);
+		// }
+		// genreRepo.save(newGenre);
+		MovieReview review = reviewRepo.findOne(id);
+		Set<Genre> existingGenres = review.getMovieGenres();
+		if (!existingGenres.contains(newGenre)) {
+			review.addGenre(newGenre);
+			reviewRepo.save(review);
+		}
+		return "redirect:/genres";
+	}
 
 	// @RequestMapping("/remove-genre")
 	// public String removeGenre(@RequestParam Long genreId, @RequestParam Long
