@@ -18,6 +18,7 @@
 					<li><a th:class="nav-item" id="link" href="http://localhost:8080/ratings">Ratings</a></li>
 				</ul>
 			</nav>
+			<small id="copyright">&copy; 2017</small>
 		</header>
 
 		<h2 class="page-title" th:text="${review.movieTitle.toUpperCase()} + ', ' + ${review.releaseYear}"></h2>
@@ -45,7 +46,7 @@
 			<input name="id" type="hidden" th:value="${review.id}"/>
 			<label>Enter a genre to add: <input type="text" name="genre" /></label>
 			<input type="hidden" name="genreImage" />
-						<!-- <label>Enter an image for that genre:<input type="url" name="genreImage" /></label> -->
+						<!-- <label>Enter an image URL for that genre:<input type="url" name="genreImage" /></label> -->
 			<button th:formaction="@{/add-genre}">Add</button>
 		</form>
 		</section>
@@ -70,8 +71,8 @@
 
 	            <!-- <p class="comments-title">No one asked, but I'd like to share my opinion:</p> -->
 	           	<div id="comments">
-	           	 <p class="comments-title">Comments:</p>
-	           	 <button class="comment-button">Add Comment</button>
+	           	 	<p class="comments-title">Comments:</p>
+	           	 	<button class="comment-button">Add Comment</button>
 	        	</div>
 			</section>
 		</div>

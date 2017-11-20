@@ -14,6 +14,7 @@ public class Genre {
 	@GeneratedValue
 	private Long id;
 
+	private String genreName;
 	private String genreImage;
 	private String genre;
 	private String defaultImage = "./images/default-review.png";
@@ -29,6 +30,12 @@ public class Genre {
 		this.genre = genre;
 		this.genreImage = defaultImage;
 	}
+
+	// public Genre(String genreName, String genre, String genreImage) {
+	// this.genreName = genreName;
+	// this.genre = genre;
+	// this.genreImage = defaultImage;
+	// }
 
 	public Genre(String genreImage, String genre) {
 		this.genreImage = genreImage;
@@ -52,6 +59,10 @@ public class Genre {
 		return genresForMovies;
 	}
 
+	public String getGenreName() {
+		return genreName;
+	}
+
 	public String getDefaultImage() {
 		return defaultImage;
 	}
@@ -63,6 +74,14 @@ public class Genre {
 
 	public void setGenreImage(String genreImage) {
 		this.genreImage = genreImage;
+	}
+
+	public void setGenreName(String genreName) {
+		this.genreName = genreName;
+	}
+
+	public void setDefaultImage(String defaultImage) {
+		this.defaultImage = defaultImage;
 	}
 
 	public void setGenre(String genre) {

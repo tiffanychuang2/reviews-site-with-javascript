@@ -8,11 +8,17 @@
  	});
  }
 
-let addCommentButton = document.querySelector('.comment-button');
-	addCommentButton[i].addEventListener('click', function() {
-		let addComment = prompt('Share your thoughts:');
-	})
-}
+let copyright = document.querySelectorAll('#copyright');
+ copyright.addEventListener('click', function() {
+	document.querySelector('#copyright').innerText = 'Something else';
+});
+
+//var addCommentButton = document.querySelector('.comment-button');
+//for (var i = addCommentButton.length - 1; i >= 0; i--) {
+//	addCommentButton[i].addEventListener('click', function() {
+//		let addComment = prompt('Share your thoughts:');
+//	});
+//}
 
 
 

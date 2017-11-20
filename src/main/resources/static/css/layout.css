@@ -117,7 +117,7 @@ header {
 .nav-bar {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	margin-top: 2rem;
 }
 
@@ -140,8 +140,6 @@ header {
 	display: flex;
 	justify-content: center;
 }
-
-
 
 .body-content {
 	display: grid;
@@ -168,8 +166,6 @@ header {
 	padding-bottom: 10rem;
 }
 
-
-
 .review-genre ul {
 	display: flex;
 	flex-direction: row;
@@ -185,4 +181,12 @@ header {
 	display: flex;
 	justify-content: center;
 	padding-top: .75rem;
+}
+
+#copyright {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 1rem;
+	margin-right: 1.5rem;
+	
 }

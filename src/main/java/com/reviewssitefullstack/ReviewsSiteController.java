@@ -64,36 +64,24 @@ public class ReviewsSiteController {
 	}
 
 	@RequestMapping("/add-genre")
-	public String addGenre(@RequestParam Long id, String genreName, String genreImage) {
+	// public String addGenre(@RequestParam(value = "id") Long id, String genreName,
+	// String genre, String genreImage) {
+	public String addGenre(@RequestParam Long id, String genreName) {
 		Genre newGenre = genreRepo.findByGenre(genreName);
 		if (newGenre == null) {
-			newGenre = new Genre(genreName, genreImage);
+			// newGenre = new Genre(genreName, genre, genreImage);
+			newGenre = new Genre(genreName);
+			// newGenre = new Genre(genreName);
 			genreRepo.save(newGenre);
 		}
-		// if (!genreImage.equals("")) {
-		// newGenre = new Genre(genre, genreImage);
-		// } else {
-		// newGenre = new Genre(genre);
-		// }
-		// genreRepo.save(newGenre);
 		MovieReview review = reviewRepo.findOne(id);
 		Set<Genre> existingGenres = review.getMovieGenres();
 		if (!existingGenres.contains(newGenre)) {
 			review.addGenre(newGenre);
 			reviewRepo.save(review);
 		}
-		return "redirect:/genres";
+		return "redirect:/review?id=" + id;
 	}
-
-	// @RequestMapping("/remove-genre")
-	// public String removeGenre(@RequestParam Long genreId, @RequestParam Long
-	// reviewId) {
-	// Genre deleteGenre = genreRepo.findOne(genreId);
-	// MovieReview review = reviewRepo.findOne(reviewId);
-	// review.removeGenre(deleteGenre);
-	// reviewRepo.save(review);
-	// return "redirect:/review?id=" + reviewId;
-	// }
 
 	@RequestMapping("/remove-genre")
 	public String removeGenre(@RequestParam Long genreId, @RequestParam Long reviewId) {
@@ -108,4 +96,20 @@ public class ReviewsSiteController {
 		}
 		return "redirect:/review?id=" + reviewId;
 	}
+
+	// @RequestMapping("/remove-genre")
+	// public String removeGenre(@RequestParam Long id, String genreName, Model
+	// model) {
+	// Genre deleteGenre = genreRepo.findByGenre(genreName);
+	// if (deleteGenre != null) {
+	// MovieReview review = reviewRepo.findOne(id);
+	// Set<Genre> existingGenres = review.getMovieGenres();
+	// if (existingGenres.contains(deleteGenre)) {
+	// review.removeGenre(deleteGenre);
+	// reviewRepo.save(review);
+	// }
+	// }
+	// return "redirect:/review?id=" + id;
+	// }
+
 }
