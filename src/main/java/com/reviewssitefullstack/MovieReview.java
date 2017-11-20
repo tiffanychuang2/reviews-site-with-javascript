@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 public class MovieReview {
@@ -30,9 +29,6 @@ public class MovieReview {
 
 	@Lob
 	private String myMovieReview;
-
-	@OneToMany(mappedBy = "review")
-	Set<CommentSection> comments;
 
 	@ManyToOne
 	private MovieRating rating;

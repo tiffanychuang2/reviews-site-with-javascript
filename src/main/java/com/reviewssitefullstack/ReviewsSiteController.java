@@ -63,6 +63,7 @@ public class ReviewsSiteController {
 		return "rating";
 	}
 
+	// add a genre to a review and have it show on genres.html as well
 	@RequestMapping("/add-genre")
 	// public String addGenre(@RequestParam(value = "id") Long id, String genreName,
 	// String genre, String genreImage) {
@@ -83,6 +84,7 @@ public class ReviewsSiteController {
 		return "redirect:/review?id=" + id;
 	}
 
+	// remove genre from review.html only
 	@RequestMapping("/remove-genre")
 	public String removeGenre(@RequestParam Long genreId, @RequestParam Long reviewId) {
 		Genre deleteGenre = genreRepo.findOne(genreId);
