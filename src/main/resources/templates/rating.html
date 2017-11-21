@@ -28,14 +28,14 @@
 				<ul class="rating-movies">
 					<li>
 						<!-- <a id="link" th:href="@{/reviews(id=${rating.ratingForMovie})}"> -->
-						<a id="link" th:href="@{/review(id=${currentMovie.id})}">
-							<img class="rating-review" th:src="${currentMovie.imageUrl}"/>
-							<figcaption class="movie-title" th:text="${currentMovie.movieTitle}"></figcaption></a>
-						</li>
-					</ul>
-				</div>
-			</section>
-		</div> <!-- container -->
-		<script src="./js/app.js"></script>
-	</body>
-	</html>
+							<a id="link" th:href="@{/review(id=${currentMovie.id})}">
+								<img class="rating-review" th:src="${currentMovie.imageUrl}"/>
+								<figcaption class="movie-title" th:text="${currentMovie.movieTitle}"></figcaption></a>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div> <!-- container -->
+			<script src="./js/app.js"></script>
+		</body>
+		</html>

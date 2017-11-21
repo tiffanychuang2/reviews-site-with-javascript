@@ -29,48 +29,48 @@
  } 
  
 // comment section
- let submitComment = document.querySelector('.submit-comment');
- submitComment.addEventListener('click', function() {
- 		let userInput = prompt('Share your thoughts:');
- 		let commentCounter = 0;
- 		commentCounter = commentCounter + 1;
- 		
- 		if(userInput == null || userInput == "") {
- 		} else {
- 			
- 			let text = document.createElement("p");
- 			text.className = 'commentCounter' + commentCounter;
+let submitComment = document.querySelector('.submit-comment');
+submitComment.addEventListener('click', function() {
+	let userInput = prompt('Share your thoughts:');
+	let commentCounter = 0;
+	commentCounter = commentCounter + 1;
+	
+	if(userInput == null || userInput == "") {
+	} else {
+		
+		let text = document.createElement("p");
+		text.className = 'commentCounter' + commentCounter;
 
- 			let box = document.createTextNode(userInput);
- 			text.appendChild(box);
+		let box = document.createTextNode(userInput);
+		text.appendChild(box);
 
- 			let deleteButton = document.createElement("button");
- 			deleteButton.className = 'commentCounter' + commentCounter;
- 			deleteButton.id = commentCounter;
+		let deleteButton = document.createElement("button");
+		deleteButton.className = 'commentCounter' + commentCounter;
+		deleteButton.id = commentCounter;
 
- 			deleteButton.addEventListener('click', function() {
- 				let confirmDelete = prompt('Delete this comment?  Enter Y to confirm.');
- 				if(confirmDelete == "Y" || confirmDelete =="y") {
- 					this.parentNode.remove();
- 				} else {
- 					alert("Comment will not be deleted.");
- 				}
- 			});
+		deleteButton.addEventListener('click', function() {
+			let confirmDelete = prompt('Delete this comment?  Enter Y to confirm.');
+			if(confirmDelete == "Y" || confirmDelete =="y") {
+				this.parentNode.remove();
+			} else {
+				alert("Comment will not be deleted.");
+			}
+		});
 
- 			let box2 = document.createTextNode("x");
- 			deleteButton.appendChild(box2);
+		let box2 = document.createTextNode("x");
+		deleteButton.appendChild(box2);
 
- 			let div = document.createElement("div");
- 			let nameClass = 'commentCounter' + commentCounter;
- 			div.classList.add(nameClass, "aComment");
- 			div.id = 'commentCounter' + commentCounter;
+		let div = document.createElement("div");
+		let nameClass = 'commentCounter' + commentCounter;
+		div.classList.add(nameClass, "aComment");
+		div.id = 'commentCounter' + commentCounter;
 
- 			let commentSection = document.getElementById("comments");
- 			commentSection.appendChild(div);
- 			div.appendChild(deleteButton);
- 			div.appendChild(text);
- 		}
- });
+		let commentSection = document.getElementById("comments");
+		commentSection.appendChild(div);
+		div.appendChild(deleteButton);
+		div.appendChild(text);
+	}
+});
 
 //  //delete genre confirm
 
@@ -87,19 +87,19 @@
 
 let deleteGenre = document.querySelectorAll('#delete-genre');
 for (let i = 0; i < deleteGenre.length; i++) {
-deleteGenre[i].addEventListener('click', function(event) {
-    if (!confirm('Remove this genre?')) {
-        event.preventDefault();
-    }
-});
+	deleteGenre[i].addEventListener('click', function(event) {
+		if (!confirm('Remove this genre?')) {
+			event.preventDefault();
+		}
+	});
 }
 
 
 
- 
 
 
- 
- 
+
+
+
 
 

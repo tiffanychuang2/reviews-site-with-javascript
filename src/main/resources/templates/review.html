@@ -27,43 +27,43 @@
 			<a class="review-rating" th:href="@{/rating(id=${review.rating.id})}" th:text="'Rated ' + ${review.rating}"></a>
 			<p class="review-rating divider" th:text="'|'"/>
 			
-		<div class="review-genre">						
-			<form method="POST">
-				<input name="reviewId" type="hidden" th:value="${review.id}" />
-				<ul>
-					<li th:each="genre: ${review.movieGenres}">
-            			<a th:href="@{/genre(id=${genre.id})}" th:text="${genre.genre}"></a>
-					<button id="delete-genre" name="genreId" th:value="${genre.id}" th:formaction="@{/remove-genre}">X</button>
-					</li>
-				</ul>
-			</form>				
+			<div class="review-genre">						
+				<form method="POST">
+					<input name="reviewId" type="hidden" th:value="${review.id}" />
+					<ul>
+						<li th:each="genre: ${review.movieGenres}">
+							<a th:href="@{/genre(id=${genre.id})}" th:text="${genre.genre}"></a>
+							<button id="delete-genre" name="genreId" th:value="${genre.id}" th:formaction="@{/remove-genre}">X</button>
+						</li>
+					</ul>
+				</form>				
 			</div>
 		</section>
 
 		<section class="add-genre">
-		<form method="POST">
-			<input name="id" type="hidden" th:value="${review.id}"/>
-			<label class="add-genre-prompt">Add a genre: <input type="text" name="genreName" /></label>
-			<input type="hidden" name="genreImage" />
-						<!-- <label>Enter an image URL for that genre:<input type="url" name="genreImage" /></label> -->
-			<!-- <button th:formaction="@{/add-genre}">Add</button> -->
-			<button th:formaction="@{/add-genre(id=${review.id})}">Add</button>
-		</form>
+			<form method="POST">
+				<input name="id" type="hidden" th:value="${review.id}"/>
+				<label class="add-genre-prompt">Add a genre: <input type="text" name="genreName" /></label>
+				<input type="hidden" name="genreImage" />
+				<!-- <label>Enter an image URL for that genre:<input type="url" name="genreImage" /></label> -->
+				<!-- <button th:formaction="@{/add-genre}">Add</button> -->
+				<button th:formaction="@{/add-genre(id=${review.id})}">Add</button>
+			</form>
 		</section>
 		
 		<div class="body-content">
-				<img class="movie-photo" alt="${review.movieTitle} + ' Image'" th:src="${review.imageUrl}"/>		
+			<img class="movie-photo" alt="${review.movieTitle} + ' Image'" th:src="${review.imageUrl}"/>		
 			<section class="review-content">
 				<blockquote class="movie-review" th:text="${review.myMovieReview}"></blockquote>
-			
+				
 				<section class="comments-section" id="comments">
-	           	 	<p class="comments-title">Comments:</p>
-	           		
-	           		<div id="comment-content">
-	           		</div> <!-- comment-content -->
+					<p class="comments-title">Comments:</p>
+					
+					<div id="comment-content">
+					</div> <!-- comment-content -->
 
-	           	 	<button class="submit-comment">Add Comment</button>
-	        	</section> <!-- comments section -->
+					<button class="submit-comment">Add Comment</button>
+				</section> <!-- comments section -->
 
 			</section> <!-- review-content -->
 		</div> <!-- body-content -->

@@ -29,7 +29,7 @@ header {
 	display: flex;
 	justify-content: center;
 	padding-top: 1rem;
- }
+}
 
 .body-content {
 	display: grid;
@@ -151,13 +151,13 @@ header {
 	margin-top: 1rem;
 }
 
-	.nav-bar:first-child {
-		margin-left: 10rem;
-	}
+.nav-bar:first-child {
+	margin-left: 10rem;
+}
 
-	.nav-bar:last-child {
-		margin-right: 10rem;
-	}
+.nav-bar:last-child {
+	margin-right: 10rem;
+}
 
 .rating-content {
 	display: flex;
@@ -185,10 +185,10 @@ header {
 	justify-content: center;
 	padding-top: .75rem;
 }
-	.review-genre ul li {
+.review-genre ul li {
 	padding-left: 1rem;
 	padding-right: 1rem;
-	}
+}
 
 .review-rating {
 	display: flex;
