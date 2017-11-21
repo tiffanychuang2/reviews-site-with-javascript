@@ -15,6 +15,10 @@ h2 {
 	text-align: center;
 }
 
+h1 {
+	margin-top: 1rem;
+}
+
 header {
 	position: fixed;
 	bottom: 0;
@@ -27,15 +31,37 @@ header {
 	padding-top: 1rem;
  }
 
+.body-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 .categories {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 }
 
+.comment-button {
+	display: flex;
+	justify-content: space-around;
+}
+
+.comment-inputs {
+	display: flex;
+	flex-direction: column;
+	grid-column: 4 / -1;
+	justify-content: flex-end;
+}
+
 .comments-section {
 	padding-left: 1rem;
 	padding-top: 2rem;
+}
+
+.container {
+	height: 100vh;
+	width: 100vw;
 }
 
 .content {
@@ -44,11 +70,6 @@ header {
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	margin: 2rem;
 	padding-bottom: 11rem;
-}
-
-.container {
-	height: 100vh;
-	width: 100vw;
 }
 
 .coverPhotos {
@@ -60,14 +81,6 @@ header {
 .divider {
 	padding-left: 3rem;
 	padding-right: 2rem;
-}
-
-.genrePhotos {
-	display: flex;
-	height: 150px;
-	justify-content: space-between;
-	margin: 4rem;
-	width: 150px;
 }
 
 .genre-item,
@@ -96,13 +109,12 @@ header {
 	text-align: center;
 }
 
-.movie-photo {
-	height: 82vh;
-	padding-left: 2rem;
-	padding-bottom: 60px;
-	padding-right: 20px;
-	padding-top: 2rem;
-	width: 28vw;
+.genrePhotos {
+	display: flex;
+	height: 150px;
+	justify-content: space-between;
+	margin: 4rem;
+	width: 150px;
 }
 
 .movie-review,
@@ -112,27 +124,44 @@ header {
 	text-align: center;
 }
 
+.movie-photo {
+	height: 82vh;
+	padding-left: 2rem;
+	padding-bottom: 60px;
+	padding-right: 20px;
+	padding-top: 2rem;
+	width: 28vw;
+}
+
 .movie-review {
-	font-size: 20px;
 	padding-left: 1rem;
 	padding-right: 2rem;
 	padding-top: 4rem;
 	text-align: left;
 }
 
+.movie-title {
+	text-align: center;
+}
+
 .nav-bar {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 1rem;
-	margin-top: 2rem;
+	/* margin-bottom: 1rem; */
+	margin-top: 1rem;
 }
 
-.nav-bar:first-child {
-	margin-left: 10rem;
-}
+	.nav-bar:first-child {
+		margin-left: 10rem;
+	}
 
-.nav-bar:last-child {
-	margin-right: 10rem;
+	.nav-bar:last-child {
+		margin-right: 10rem;
+	}
+
+.rating-content {
+	display: flex;
+	justify-content: center;
 }
 
 .ratings {
@@ -140,28 +169,6 @@ header {
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	margin-left: 4rem;
 	padding-top: 2rem;
-}
-
-.rating-content {
-	display: flex;
-	justify-content: center;
-}
-
-.body-content {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.comment-inputs {
-	display: flex;
-	flex-direction: column;
-	grid-column: 4 / -1;
-	justify-content: flex-end;
-}
-
-.comment-button {
-	display: flex;
-	justify-content: space-around;
 }
 
 .review-content {

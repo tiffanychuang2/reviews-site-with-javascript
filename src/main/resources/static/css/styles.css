@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Abel|Anton|Barlow|Barlow+Condensed|Barlow+Semi+Condensed|Cairo|Fjalla+One|Gloria+Hallelujah|Indie+Flower|Oswald');
-
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Cabin+Sketch|Caveat|Caveat+Brush|Codystar|Fascinate+Inline|Fredericka+the+Great|Gochi+Hand|Londrina+Sketch|Margarine|Megrim|Permanent+Marker|Sirin+Stencil|Special+Elite|Swanky+and+Moo+Moo|Trochut');
 
 a {
 	color: white;
@@ -17,15 +17,15 @@ body {
 	background-size: cover;
 	color: white;
 	font-family: 'Barlow Condensed', sans-serif;
-	/* font-family: 'Barlow Semi Condensed', sans-serif; */
-	/* font-family: 'Barlow', sans-serif; */
-	/* font-family: 'Oswald', sans-serif; */
-	/* font-family: 'Anton', sans-serif; */
-	/* font-family: 'Fjalla One', sans-serif; */
-	/* font-family: 'Indie Flower', cursive; */
-	/* font-family: 'Abel', sans-serif; */
-	/* font-family: 'Gloria Hallelujah', cursive; */
-	/* font-family: 'Cairo', sans-serif; */
+	/*font-family: 'Caveat Brush', cursive;*/
+	/*font-family: 'Special Elite', cursive;*/
+	/*font-family: 'Gochi Hand', cursive;*/
+	/*font-family: 'Margarine', cursive;*/
+}
+
+h1,
+h2 {
+	font-family: 'Fascinate Inline', cursive;	
 }
 
 h1 {
@@ -48,8 +48,20 @@ ul li {
 	list-style-type: none;
 }
 
+.add-genre-prompt {
+	font-size: 20px;
+}
+
 .comment-button {
 	width: 20%;
+}
+
+.comments-title {
+	font-size: 18px;
+}
+
+.movie-review {
+	font-size: 20px;
 }	
 
 .movie-title {

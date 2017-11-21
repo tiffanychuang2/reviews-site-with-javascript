@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<header>
-			<h1>Movie Review</h1>
+			<h1>MOVIE REVIEW</h1>
 			<nav>
 				<ul class="nav-bar">
 					<li><a th:class="nav-item" id="link" href="http://localhost:8080/reviews">Home</a></li>
@@ -43,7 +43,7 @@
 		<section class="add-genre">
 		<form method="POST">
 			<input name="id" type="hidden" th:value="${review.id}"/>
-			<label>Add a genre: <input type="text" name="genreName" /></label>
+			<label class="add-genre-prompt">Add a genre: <input type="text" name="genreName" /></label>
 			<input type="hidden" name="genreImage" />
 						<!-- <label>Enter an image URL for that genre:<input type="url" name="genreImage" /></label> -->
 			<!-- <button th:formaction="@{/add-genre}">Add</button> -->
